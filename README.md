@@ -69,3 +69,13 @@ flutter build ios  // iOSの場合
  ```
  flutter clean
  ```
+
+ # 8.webでデバッグするために
+　codespaceからダウンロードしてAndrodi/iPhoneにアプリをインストールして確認するのは面倒くさいため、ウェブを利用してデバッグをしたい。ということで、ウェブを使うための方法。
+
+```
+flutter run --release -d web-server --web-hostname=0.0.0.0 --web-port=8080
+flutter run --release -d web-server --web-hostname=0.0.0.0 --web-port=8888
+```
+
+　なお、このweb-portはdevcontainer.jsonに記述しているforwardPortsから取ってきている。portsを変更すれば、web-portも変更することが必要であるため注意されたい。
